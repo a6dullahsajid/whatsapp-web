@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    scrollbar-width: thin;
+    scrollbar-arrow-color: rgb(186, 186, 186);
+    scrollbar-base-color: rgb(186, 186, 186);
+}

@@ -8,20 +8,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#f42c37",
-        secondary: "#f42c37",
-        brandYellow: "#fdc62e",
-        brandBlue: "#2dcc6f",
-        brandGreen: "#1376f4",
-        brandWhite: "#eeeeee",
+        primary: "#1B8755",
+        secondary: "#d9fdd3",
+        navcolor: "#f7f5f3",
+        iconcolor: "#636261",
+        brandColor: "#1daa61",
+        elementBg: "#D9FDD3",
       },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: "1rem",
-          sm: "3rem"
-        }
-      }
     },
   },
   plugins: [],
