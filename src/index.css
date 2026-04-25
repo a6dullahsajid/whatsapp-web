@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+
+body {
+    font-family: "Roboto Variable", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scrollbar-width: thin;
     scrollbar-arrow-color: rgb(186, 186, 186);
     scrollbar-base-color: rgb(186, 186, 186);
+}
+
+.chat-bg {
+    background-image:
+        linear-gradient(rgba(236, 229, 221, 0.85), rgba(236, 229, 221, 0.85)),
+        url("./assets/ChatArea/chatbg.png");
+    background-repeat: repeat;
 }

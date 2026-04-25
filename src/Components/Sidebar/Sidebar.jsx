@@ -4,7 +4,7 @@ import profile from "../../assets/SideNav/profileImage.png";
 import SidebarMain from "./SidebarMain";
 const Sidebar = () => {
   return (
-    <section className="w-[35.5%] text-white h-screen flex">
+    <section className="w-[35%] text-white h-screen flex">
       <nav className="w-[12%] flex flex-col items-center justify-between pt-3 pb-2 bg-navcolor">
         <ul className="flex flex-col items-center text-iconcolor gap-1">
           <li className="rounded-full p-2 hover:bg-gray-300/50 bg-gray-300/50 text-black">
