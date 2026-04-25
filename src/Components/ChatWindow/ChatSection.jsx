@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
 import { ChatContext } from "../../Context/ChatContext";
 import ChatDefaultScreen from "./ChatDefaultScreen";
-import backArrow from "../../assets/ChatArea/backArrow.png";
+import backArrow from "../../assets/ChatWindow/backArrow.png";
 
 const ChatSection = () => {
   const { users, chats, activeUserId, sendMessage, setActiveUserId } =

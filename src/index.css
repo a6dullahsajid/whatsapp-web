@@ -20,6 +20,6 @@ body {
 .chat-bg {
     background-image:
         linear-gradient(rgba(236, 229, 221, 0.85), rgba(236, 229, 221, 0.85)),
-        url("./assets/ChatArea/chatbg.png");
+        url("./assets/ChatWindow/chatbg.png");
     background-repeat: repeat;
 }

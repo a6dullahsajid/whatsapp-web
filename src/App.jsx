@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar/Sidebar.jsx";
-import ChatSection from "./Components/ChatArea/ChatSection.jsx";
+import ChatSection from "./Components/ChatWindow/ChatSection.jsx";
 
 const App = () => {
 
