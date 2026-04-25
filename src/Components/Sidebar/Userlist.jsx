@@ -6,12 +6,12 @@ import { ChatContext } from "../../Context/ChatContext";
 
 const Userlist = () => {
   const { users, activeUserId, setActiveUserId } = useContext(ChatContext);
-  // const formatTime = (time)=>{
-
-  // }
-
+  const messageFormat = (text) => {
+    if (text.length <= 25) return text;
+    return text.slice(0, 22) + "...";
+  };
   return (
-    <ul className="overflow-y-scroll flex gap-1 px-2 flex-col text-black h-[70%]">
+    <ul className="overflow-y-scroll flex gap-1 px-2 flex-col text-black h-4/5 md:h-[70%]">
       {users.map((user, index) => {
         return (
           <li
@@ -29,11 +29,15 @@ hover:bg-iconcolor/5 transition-all duration-200`}
               />
               <div>
                 <h3 className="text-md">{user.name}</h3>
-                <p className="text-sm text-iconcolor">{user.lastMessage}</p>
+                <p className="text-sm text-iconcolor whitespace-pre-line">
+                  {messageFormat(user.lastMessage)}
+                </p>
               </div>
             </div>
             <div className="flex flex-col items-end justify-start gap-2 h-full">
-              <p className="text-xs text-iconcolor">{user.time}</p>
+              <p className="text-xs text-iconcolor whitespace-nowrap">
+                {user.time}
+              </p>
               <p className="opacity-0 text-iconcolor group-hover:opacity-100 transition-all duration-200">
                 <DownArrow />
               </p>

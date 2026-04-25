@@ -1,9 +1,11 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
 import { ChatContext } from "../../Context/ChatContext";
 import ChatDefaultScreen from "./ChatDefaultScreen";
+import backArrow from "../../assets/ChatArea/backArrow.png";
 
 const ChatSection = () => {
-  const { users, chats, activeUserId, sendMessage } = useContext(ChatContext);
+  const { users, chats, activeUserId, sendMessage, setActiveUserId } =
+    useContext(ChatContext);
   const activeUser = users.find((user) => user.id === activeUserId);
   const messagesEnd = useRef(null);
 
@@ -18,12 +20,16 @@ const ChatSection = () => {
 
     window.typingTimeout = setTimeout(() => {
       setTyping(false);
-    }, 500);
+    }, 800);
   };
 
   const handleSend = () => {
     sendMessage(message);
     setMessage("");
+  };
+
+  const handleBack = () => {
+    setActiveUserId(0);
   };
 
   useEffect(() => {
@@ -35,9 +41,19 @@ const ChatSection = () => {
       {activeUserId === 0 ? (
         <ChatDefaultScreen />
       ) : (
-        <section className="w-[65%] h-screen chat-bg">
-          <header className="sticky top-0 shadow flex items-center justify-between bg-white text-black px-4 py-3">
+        <section
+          className={`w-full md:w-[65%] ${activeUserId === 0 ? "hidden" : "block"} md:block h-screen chat-bg`}
+        >
+          <header className="sticky top-0 shadow flex items-center z-40 justify-between bg-white text-black px-2 md:px-4 py-3">
             <div className="flex items-center gap-3">
+              <div className="block md:hidden">
+                <img
+                  src={backArrow}
+                  alt=""
+                  className="h-4 w-4"
+                  onClick={handleBack}
+                />
+              </div>
               <div>
                 <img
                   src={activeUser?.profileImage}
@@ -47,8 +63,8 @@ const ChatSection = () => {
               </div>
               <div>{activeUser?.name}</div>
             </div>
-            <div className="flex items-center gap-5">
-              <div className="flex items-center rounded-full border-gray-300 gap-2 border px-4 py-2">
+            <div className="flex items-center gap-0 md:gap-5">
+              <div className="flex items-center rounded-full border-gray-300 gap-2 border px-2 py-1 md:px-4 md:py-2">
                 <div className="text-sm">
                   <VideoIcon />
                 </div>
@@ -57,16 +73,16 @@ const ChatSection = () => {
                   <DownArrow />
                 </div>
               </div>
-              <div className="rounded-full p-2 hover:bg-gray-300/30">
+              <div className="rounded-full md:p-2 hover:bg-gray-300/30">
                 <SearchIcon />
               </div>
-              <div className="rounded-full p-2 hover:bg-gray-300/30">
+              <div className="rounded-full md:p-2 hover:bg-gray-300/30">
                 <TripleDot />
               </div>
             </div>
           </header>
           {/* Messages */}
-          <div className="flex flex-col overflow-y-scroll h-[595px] gap-2 py-2 px-12">
+          <div className="flex flex-col overflow-y-scroll h-5/6 md:h-[595px] gap-1 md:gap-2 py-1 px-4 md:py-2 md:px-12">
             {chats.map((chat, index) => {
               if (chat.id === activeUser.id) {
                 return chat.messages.map((msg, index) => {
@@ -74,7 +90,7 @@ const ChatSection = () => {
                     return (
                       <div key={index} className="w-full flex">
                         {/* Recieved Message  */}
-                        <div className="flex gap-1 relative bg-white rounded-md rounded-tl-none px-2 py-1 max-w-[50%] w-fit min-w-[16%]">
+                        <div className="flex gap-1 relative bg-white rounded-md rounded-tl-none px-2 py-1 max-w-[65%] md:max-w-[50%] w-fit min-w-[5%]">
                           <div className="w-2 h-2 absolute -left-1.5 top-0  rotate-90 bg-gradient-to-br from-white from-50% to-transparent to-50%"></div>
                           <div className="w-fit text-sm">{msg.message}</div>
                           <div className="flex gap-0.5 items-end text-xs text-iconcolor">
@@ -92,7 +108,7 @@ const ChatSection = () => {
                     return (
                       <div key={index} className="w-full flex justify-end ">
                         {/* Sent Message  */}
-                        <div className="flex gap-1 relative max-w-[50%] min-w-[5%] bg-elementBg rounded-md rounded-tr-none py-1 px-2 text-sm">
+                        <div className="flex gap-1 relative max-w-[65%] md:max-w-[50%] min-w-[5%] bg-elementBg rounded-md rounded-tr-none py-1 px-2 text-sm">
                           <div className="w-2 h-2 absolute -right-1.5 top-0  rotate-0 bg-gradient-to-br from-elementBg from-50% to-transparent to-50%"></div>
                           <div className="w-fit  text-sm">{msg.message}</div>
                           <div className="flex gap-0.5 items-end text-xs text-iconcolor">
@@ -120,7 +136,7 @@ const ChatSection = () => {
             )}
             <div ref={messagesEnd}></div>
           </div>
-          <footer className="bottom-0 w-full p-2">
+          <footer className="bottom-0 w-full p-1 md:p-2">
             <div className="relative flex">
               <div className="absolute flex top-2 left-2">
                 <div className="rounded-full p-1.5 hover:bg-iconcolor/10 transition-all duration-200">

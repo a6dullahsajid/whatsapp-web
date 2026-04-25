@@ -2,9 +2,15 @@ import React from "react";
 import metaLogo from "../../assets/SideNav/metalogo.png";
 import profile from "../../assets/SideNav/profileImage.png";
 import SidebarMain from "./SidebarMain";
+import { useContext } from "react";
+import { ChatContext } from "../../Context/ChatContext";
+
 const Sidebar = () => {
+  const { activeUserId } = useContext(ChatContext);
+  const sidebarHidden = activeUserId !== 0;
+  console.log(sidebarHidden);
   return (
-    <section className="w-[35%] text-white h-screen flex">
+    <section className={`w-[100%] md:w-[35%] ${sidebarHidden ? "hidden" : "flex"} text-white h-screen md:flex`}>
       <nav className="w-[12%] flex flex-col items-center justify-between pt-3 pb-2 bg-navcolor">
         <ul className="flex flex-col items-center text-iconcolor gap-1">
           <li className="rounded-full p-2 hover:bg-gray-300/50 bg-gray-300/50 text-black">
@@ -28,7 +34,11 @@ const Sidebar = () => {
             <MediaIcon />
           </li>
           <li className="rounded-full p-2 hover:bg-gray-300/50">
-            <img src={profile} alt="" className="rounded-full w-7 h-7 border border-gray-500/60" />
+            <img
+              src={profile}
+              alt=""
+              className="rounded-full w-7 h-7 border border-gray-500/60"
+            />
           </li>
         </ul>
       </nav>

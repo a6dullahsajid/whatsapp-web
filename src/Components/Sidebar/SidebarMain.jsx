@@ -4,7 +4,7 @@ import Userlist from "./Userlist";
 const SidebarMain = () => {
   return (
     <div className="w-[88%] border-black/15 border-x relative">
-      <header className="flex flex-col w-full h-[22%] text-black">
+      <header className="flex flex-col w-full md:h-[22%] h-1/5 text-black">
         <div className="flex justify-between items-center px-5 py-3">
           <div className="text-brandColor">
             <WhatsappLogo />
@@ -29,7 +29,7 @@ const SidebarMain = () => {
           />
         </div>
         <div className="w-full flex items-center mt-2 justify-center py-1">
-          <ul className="flex w-[91%] gap-2">
+          <ul className="flex w-[91%] gap-0.5 md:gap-2">
             <li className="rounded-full border py-1 px-3 text-[#15603e] bg-elementBg  text-sm font-semibold border-iconcolor/25">
               All
             </li>
@@ -49,7 +49,7 @@ const SidebarMain = () => {
         </div>
       </header>
       <Userlist />
-      <footer className="flex items-center justify-center gap-2 pr-4 w-full h-[8%] border-t border-t-black/15">
+      <footer className="hidden md:flex  items-center justify-center gap-2 pr-4 w-full h-[8%] border-t border-t-black/15">
         <div>
           <WhatsappFooter />
         </div>

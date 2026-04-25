@@ -1,9 +1,14 @@
 import React from "react";
 import metaLogo from "../../assets/SideNav/metalogo.png";
+import { useContext } from "react";
+import { ChatContext } from "../../Context/ChatContext";
 
 const ChatDefaultScreen = () => {
+  const { activeUserId } = useContext(ChatContext);
   return (
-    <section className="w-[65%] h-screen flex flex-col items-center justify-center gap-8 bg-navcolor">
+    <section
+      className={`w-full md:w-[65%] ${activeUserId === 0 ? "hidden" : "flex"} hidden md:flex h-screen flex-col items-center justify-center gap-8 bg-navcolor`}
+    >
       <div className="bg-white flex flex-col items-center w-[35%] justify-center rounded-2xl gap-6 p-6">
         <div>
           <LaptopScreen />
@@ -17,7 +22,9 @@ const ChatDefaultScreen = () => {
             more.
           </p>
           <button className="bg-elementBg text-primary font-semibold rounded-full mt-3 py-1 px-3">
-            Download
+            <a href="https://get.microsoft.com/installer/download/9NKSQGP7F2NH?cid=website_cta_psi">
+              Download
+            </a>
           </button>
         </div>
       </div>
