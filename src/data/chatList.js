@@ -1,7 +1,6 @@
 export const chatList = [
   {
     id: 1,
-    name: "Aakash Yadav",
     messages: [
       { message: "By the way kal ka exam kitne baje hai?", recieved: true, time: "10:10 pm, 10 March, 2026" },
       { message: "9:30 se start hai", recieved: false, time: "10:11 pm, 10 March, 2026" },
@@ -57,7 +56,6 @@ export const chatList = [
 
   {
     id: 2,
-    name: "Abdur",
     messages: [
       { message: "Bhai free ho?", recieved: true, time: "7:10 pm, 9 March, 2026" },
       { message: "Haan bolo", recieved: false, time: "7:11 pm, 9 March, 2026" },
@@ -92,7 +90,6 @@ export const chatList = [
 
   {
     id: 3,
-    name: "Aditya Singh",
     messages: [
       { message: "Assignment complete?", recieved: true, time: "5:40 pm, 8 March, 2026" },
       { message: "Not yet, still working on it", recieved: false, time: "5:41 pm, 8 March, 2026" },
@@ -121,7 +118,6 @@ export const chatList = [
 
   {
     id: 4,
-    name: "Ammar",
     messages: [
       { message: "Did you watch the match yesterday?", recieved: true, time: "10:15 pm, 7 March, 2026" },
       { message: "Yeah it was insane", recieved: false, time: "10:16 pm, 7 March, 2026" },
@@ -168,7 +164,6 @@ export const chatList = [
 
   {
     id: 5,
-    name: "Amritansh Jaiswal",
     messages: [
       { message: "Are you coming to college tomorrow?", recieved: true, time: "11:20 am, 6 March, 2026" },
       { message: "Yeah I think so", recieved: false, time: "11:21 am, 6 March, 2026" },
@@ -210,7 +205,6 @@ export const chatList = [
 
   {
     id: 6,
-    name: "Arshad Khan",
     messages: [
       { message: "Can you send me the notes from today's class?", recieved: true, time: "2:10 pm, 6 March, 2026" },
       { message: "Yeah sure give me a minute", recieved: false, time: "2:11 pm, 6 March, 2026" },
@@ -250,7 +244,6 @@ export const chatList = [
 
   {
     id: 7,
-    name: "Rahul Sharma",
     messages: [
       { message: "Hey bro what are you doing?", recieved: true, time: "8:10 pm, 1 March, 2026" },
       { message: "Nothing much just finishing some college work", recieved: false, time: "8:11 pm, 1 March, 2026" },
@@ -325,7 +318,6 @@ export const chatList = [
 
   {
     id: 8,
-    name: "Hamdan",
     messages: [
       { message: "Kal gym chalna?", recieved: true, time: "8:10 pm, 5 March, 2026" },
       { message: "Subah ya shaam?", recieved: false, time: "8:12 pm, 5 March, 2026" },
@@ -338,7 +330,6 @@ export const chatList = [
 
   {
     id: 9,
-    name: "Lenskart",
     messages: [
       { message: "Your order has been shipped", recieved: true, time: "11:10 am, 5 March, 2026" },
       { message: "Track here: lenskart.com/order", recieved: true, time: "11:11 am, 5 March, 2026" },
@@ -349,7 +340,6 @@ export const chatList = [
 
   {
     id: 10,
-    name: "Priyanshu",
     messages: [
       { message: "Bhai game khelne aa?", recieved: true, time: "6:20 pm, 4 March, 2026" },
       { message: "Kaunsa?", recieved: false, time: "6:21 pm, 4 March, 2026" },
@@ -362,7 +352,6 @@ export const chatList = [
 
   {
     id: 11,
-    name: "Sadiq",
     messages: [
       { message: "yrr baaki log kaha hai?", recieved: true, time: "5:10 pm, 4 March, 2026" },
       { message: "Aate honge", recieved: false, time: "5:11 pm, 4 March, 2026" },
@@ -374,7 +363,6 @@ export const chatList = [
 
   {
     id: 12,
-    name: "Sumaiya",
     messages: [
       { message: "Notes mil gaye?", recieved: true, time: "3:10 pm, 3 March, 2026" },
       { message: "Haan thanks", recieved: false, time: "3:11 pm, 3 March, 2026" },
@@ -386,7 +374,6 @@ export const chatList = [
 
   {
     id: 13,
-    name: "Mohd Taha",
     messages: [
       { message: "Kal ka lecture important hai", recieved: true, time: "10:30 am, 3 March, 2026" },
       { message: "Haan pata hai", recieved: false, time: "10:31 am, 3 March, 2026" },
@@ -398,7 +385,6 @@ export const chatList = [
 
   {
     id: 14,
-    name: "Tanzeel",
     messages: [
       { message: "Assignment bhejna", recieved: true, time: "9:10 pm, 2 March, 2026" },
       { message: "Abhi bhejta hoon", recieved: false, time: "9:12 pm, 2 March, 2026" },
@@ -410,7 +396,6 @@ export const chatList = [
 
   {
     id: 15,
-    name: "Mohd Yusuf",
     messages: [
       { message: "Kal milte hain", recieved: true, time: "7:40 pm, 2 March, 2026" },
       { message: "Kis time?", recieved: false, time: "7:41 pm, 2 March, 2026" },

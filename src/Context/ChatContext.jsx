@@ -1,4 +1,4 @@
-import { createContext, useState,useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import { userList } from "../data/userList";
 import { chatList } from "../data/chatList";
 import Userlist from "../Components/Sidebar/Userlist";
@@ -38,7 +38,9 @@ export const ChatProvider = ({ children }) => {
 
     setUsers((prevUsers) =>
       prevUsers.map((user) =>
-        user.id === activeUserId ? { ...user, lastMessage: text } : user,
+        user.id === activeUserId
+          ? { ...user, lastMessage: text, time: newMessage.time.split(",")[0] }
+          : user,
       ),
     );
 
