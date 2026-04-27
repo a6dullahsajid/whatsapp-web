@@ -1,20 +1,16 @@
 import { createContext, useState, useEffect } from "react";
-import { userList } from "../data/userList";
-import { chatList } from "../data/chatList";
+import { userList } from "../data/users";
 import Userlist from "../Components/Sidebar/Userlist";
 
 export const ChatContext = createContext();
 
 export const ChatProvider = ({ children }) => {
   const storedUsers = localStorage.getItem("Users");
-  const storedChats = localStorage.getItem("Chats");
+  const storedusers = localStorage.getItem("users");
 
   const [activeUserId, setActiveUserId] = useState(0);
   const [users, setUsers] = useState(
     storedUsers ? JSON.parse(storedUsers) : userList,
-  );
-  const [chats, setChats] = useState(
-    storedChats ? JSON.parse(storedChats) : chatList,
   );
 
   const sendMessage = (text) => {
@@ -36,16 +32,8 @@ export const ChatProvider = ({ children }) => {
       })}`,
     };
 
-    setUsers((prevUsers) =>
-      prevUsers.map((user) =>
-        user.id === activeUserId
-          ? { ...user, lastMessage: text, time: newMessage.time.split(",")[0] }
-          : user,
-      ),
-    );
-
-    setChats((prevChats) =>
-      prevChats.map((chat) =>
+    setUsers((prevusers) =>
+      prevusers.map((chat) =>
         chat.id === activeUserId
           ? { ...chat, messages: [...chat.messages, newMessage] }
           : chat,
@@ -54,15 +42,13 @@ export const ChatProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("Users", JSON.stringify(users));
-    localStorage.setItem("Chats", JSON.stringify(chats));
-  }, [users, chats]);
+    localStorage.setItem("users", JSON.stringify(users));
+  }, [users]);
 
   return (
     <ChatContext.Provider
       value={{
         users,
-        chats,
         activeUserId,
         sendMessage,
         setActiveUserId,

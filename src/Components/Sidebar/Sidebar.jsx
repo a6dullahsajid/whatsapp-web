@@ -8,7 +8,6 @@ import { ChatContext } from "../../Context/ChatContext";
 const Sidebar = () => {
   const { activeUserId } = useContext(ChatContext);
   const sidebarHidden = activeUserId !== 0;
-  console.log(sidebarHidden);
   return (
     <section className={`w-[100%] md:w-[35%] ${sidebarHidden ? "hidden" : "flex"} text-white h-screen md:flex`}>
       <nav className="w-[12%] flex flex-col items-center justify-between pt-3 pb-2 bg-navcolor">

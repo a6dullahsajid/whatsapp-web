@@ -4,7 +4,7 @@ import ChatDefaultScreen from "./ChatDefaultScreen";
 import backArrow from "../../assets/ChatWindow/backArrow.png";
 
 const ChatSection = () => {
-  const { users, chats, activeUserId, sendMessage, setActiveUserId } =
+  const { users, activeUserId, sendMessage, setActiveUserId } =
     useContext(ChatContext);
   const activeUser = users.find((user) => user.id === activeUserId);
   const messagesEnd = useRef(null);
@@ -34,7 +34,7 @@ const ChatSection = () => {
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chats.find((chat) => chat.id === activeUserId), typing]);
+  }, [users.find((chat) => chat.id === activeUserId), typing]);
 
   return (
     <>
@@ -83,7 +83,7 @@ const ChatSection = () => {
           </header>
           {/* Messages */}
           <div className="flex flex-col overflow-y-scroll h-5/6 md:h-[595px] gap-1 md:gap-2 py-1 px-4 md:py-2 md:px-12">
-            {chats.map((chat, index) => {
+            {users.map((chat, index) => {
               if (chat.id === activeUser.id) {
                 return chat.messages.map((msg, index) => {
                   if (msg.recieved) {
