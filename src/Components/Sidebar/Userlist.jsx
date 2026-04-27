@@ -29,14 +29,14 @@ hover:bg-iconcolor/5 transition-all duration-200`}
                 <h3 className="text-md">{user.name}</h3>
                 <p className="text-sm text-iconcolor whitespace-pre-line">
                   {messageFormat(
-                    user.messages[user.messages.length - 1].message,
+                    user.messages[user.messages?.length - 1].message,
                   )}
                 </p>
               </div>
             </div>
             <div className="flex flex-col items-end justify-start gap-2 h-full">
               <p className="text-xs text-iconcolor whitespace-nowrap">
-                {user.messages[user.messages.length - 1].time.split(",")[0]}
+                {user.messages[user.messages?.length - 1].time.split(",")[0]}
               </p>
               <p className="opacity-0 text-iconcolor group-hover:opacity-100 transition-all duration-200">
                 <DownArrow />
