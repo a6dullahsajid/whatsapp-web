@@ -1,16 +1,75 @@
-# React + Vite
+# WhatsApp Web Frontend Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **WhatsApp Web UI clone** built using **React, Vite, and Tailwind CSS**.
+This project recreates the core interface and chat interactions using **static data and Context API**, without any backend.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://a6dullahsajid.github.io/whatsapp-web/
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* WhatsApp Web inspired UI
+* Chat sidebar with users
+* Dynamic chat switching
+* Message bubbles (sent & received)
+* Send message functionality
+* Last message preview in chat list
+* Auto scroll to latest message
+* LocalStorage persistence
+* Static JSON chat data
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Vite
+* Tailwind CSS
+* Context API
+* LocalStorage
+
+## Project Structure
+
+```
+src
+├── assets
+├── components
+│   ├── Sidebar
+│   └── Chat
+├── context
+│   └── ChatContext.jsx
+├── data
+│   ├── userList.js
+│   └── chatList.js
+├── App.jsx
+└── main.jsx
+```
+
+## Installation
+
+Clone the repository
+
+```
+git clone https://github.com/a6dullahsajid/whatsapp-web.git
+```
+
+Go to project directory
+
+```
+cd whatsapp-web
+```
+
+Install dependencies
+
+```
+npm install
+```
+
+Run development server
+
+```
+npm run dev
+```
+
+## Disclaimer
+
+This project is for **educational and portfolio purposes only** and is not affiliated with WhatsApp or Meta.
